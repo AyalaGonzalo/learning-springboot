@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>create news</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/news_form.css}">
+    </head>
+    <body>
+
+        <nav class="nav-container">
+
+            <div class ="nav-child">
+
+                <h2>Egg</h2>
+
+            </div>
+
+
+            <div class ="nav-child">
+
+                <a th:href="@{/}">Home page</a>
+                <a th:href="@{/admin/tools}">Admin panel</a>
+
+            </div>
+
+        </nav>
+
+
+
+        <div class="main-container">
+
+
+            <div class="create-alert" th:if="${error}!=null">
+
+                <h4>Error</h4>
+                <p th:text="${error}"></p>
+
+            </div>
+
+            <div class="child-container">
+
+                <div>
+
+                    <h1>New news</h1>
+
+                </div>
+
+                <form class="form-container" th:action="@{/admin/tools/create-news-admin/}" method="POST" >
+
+
+
+                    <div class="form-child">
+
+                        <label>Title</label>
+                        <input type="text" name="title" placeholder="Enter a title">
+
+                    </div>
+
+                    <div class="form-child">
+
+                        <button type="submit">Submit</button>
+
+                    </div>
+
+
+                </form>
+
+
+
+            </div>
+
+        </div>
+
+
+    </body>
+</html>

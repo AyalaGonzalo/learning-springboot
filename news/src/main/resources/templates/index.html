@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html  xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/index.css">
+    </head>
+    <body>
+
+        <nav class="nav-container">
+
+            <div class ="nav-child">
+
+                <h2>Egg</h2>
+
+            </div>
+
+            <div class ="nav-child">
+
+                <a th:href="@{/sign-up}">Sign in</a>
+                <a th:href="@{/sign-in}">Login in</a>
+               
+
+            </div>
+
+        </nav>
+
+        <header>
+
+            <h1>Egg news</h1>
+
+        </header>
+
+
+
+        <main>
+		
+			<div class="message-container" th:if="${success}!=null">
+
+                <h4>Success!</h4>
+                <p th:text="${success}"></p>
+
+            </div>
+
+			<div class="main-container">
+
+                <div class="child-container" th:each="news : ${news}">
+
+                    <a th:href="@{/section-news}">
+                        <h2 class="sub-title" th:text="${news.title}">p</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis molestiae maxime pariatur sequi vitae cumque dolore, cupiditate reiciendis incidunt nam, corrupti tenetur amet, sint libero commodi doloribus assumenda non aspernatur?</p>
+                    </a>
+
+                </div>
+
+            </div>
+
+     
+        </main>
+
+
+    </body>
+</html>

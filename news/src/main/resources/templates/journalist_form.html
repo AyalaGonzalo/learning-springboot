@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>signup a journalist</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" th:href="@{/admin_up.css}">
+    </head>
+    <body>
+        
+        
+       
+        <main class="main-container">
+		
+			<div class="create-alert" th:if="${error}!=null">
+
+				<h4>Error</h4>
+				<p th:text="${error}"></p>
+
+			</div>
+		
+		
+			<div class="child-container">
+			
+				
+			
+				<div>
+
+                    <h1>New Journalist</h1>
+
+                </div>
+
+            
+				<form class="form-container" action="/admin/tools/add-journalist" method="POST">
+                
+					<label>Add name</label>
+					<input type="text" name="uName">
+					
+					<label>Add password</label>
+					<input type="password" name="password">
+					
+					<label>Repeat password</label>
+					<input type="password" name="repeatPassword">
+					
+					<label>Add Email</label>
+					<input type="email" name="email">
+					
+					<label>Salary</label>
+					<input type="number" name="salary">
+                
+					<button type="submit">Submit</button>
+                
+				</form>
+            
+			</div>
+
+        </main>
+        
+        
+    </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Log in</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" th:href="@{/admin_up.css}">
+    </head>
+    <body>
+	
+	
+		 <nav class="nav-container">
+
+            <div class ="nav-child">
+
+                <h2>Egg</h2>
+
+            </div>
+
+            <div class ="nav-child">
+
+              
+                <a th:href="@{/}">Home Page</a>
+               
+
+            </div>
+
+        </nav>
+	
+        
+		<main class="main-container">
+		
+			<div th:if="${error!= null}">
+            
+				<h3>Error!</h3>
+				<p th:text="${error}"></p>
+            
+			</div>
+        
+        
+			<div class="child-container">
+			
+			
+				<form class="form-container" th:action="@{/login-success}" method="POST">
+            
+            
+					<label>User name</label>
+					<input type="text" name="uName">
+            
+					<label>Password</label>
+					<input type="password" name="password">
+            
+            
+					<button type="submit">Log in!</button>
+				</form>
+        
+
+			</div>
+		
+			<div>
+		
+				<a th:href="@{/sign-up}">Dont have an account? Sign Up!</a>
+		
+			</div>	
+        
+        </main>
+    </body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"  th:href="@{/admin.css}">
+
+
+
+        <title>Admin</title>
+    </head>
+    <body>
+
+        <nav class="nav-container">
+            <div class="nav-child">
+
+                <h2>Egg</h2>
+
+            </div>
+
+            <div class="nav-child">
+
+                <a th:href="@{/log-out}">Logout</a>
+
+            </div>
+
+        </nav>
+        <header>
+
+            <h1>Admin menu</h1>
+
+        </header>
+        <main>
+
+
+
+
+            <div class="main-container">
+
+                <div class="message-container" th:if="${success}!=null">
+
+                    <h4>Success!</h4>
+                    <p th:text="${success}"></p>
+
+                </div>
+
+
+                <div> 
+                    <a sec:authorize="hasRole('JOURNALIST')" th:href="@{/admin/tools/create-news}">Create news</a>
+                    <a sec:authorize="hasRole('ADMIN')" th:href="@{/admin/tools/create-news-admin}">Create news</a>
+                    <a sec:authorize="hasRole('ADMIN')" th:href="@{/admin/tools/admin-up}">add a new admin</a>
+                    <a sec:authorize="hasRole('ADMIN')" th:href="@{/admin/tools/add-journalist}">Add a new journalist</a>
+                </div>
+
+
+
+
+                <table class="table-container">
+
+                    <thead class="table-head">
+
+                    <th scope = "col">Title</th>
+                    <th scope = "col">ISBN</th>
+                    <th scope = "col">Date</th>
+                    <th scope="col">Actions</th>
+
+                    </thead>
+
+                    <tbody class="table-body" th:each="news : ${news}">
+
+                        <tr>
+
+                            <td th:text="${news.title}"></td>
+                            <td th:text="${news.isbn}"></td>
+                            <td th:text="${news.releaseDate}"></td>
+                            <td>
+
+                                <a th:href="@{/admin/tools/modify-news/__${news.isbn}__}">Modify news</a>
+
+                                <a sec:authorize="hasRole('ADMIN')" th:href="@{/admin/deleted/__${news.isbn}__}">Delete news</a>
+
+                            </td>
+
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+
+
+            </div>
+
+
+
+
+        </main>
+
+
+
+
+    </body>
+</html>

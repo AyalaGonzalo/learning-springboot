@@ -1,0 +1,104 @@
+
+body{
+
+	background-color: azure;
+	
+
+}
+
+
+
+.nav-container{
+	
+	height: 75px;
+	background-color: rgb(230, 230, 230);
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 2px solid rgb(100, 100, 100);
+	align-items:center;
+}
+
+
+.nav-child{
+	
+	display: flex;
+	align-items:center;
+	justify-content: center;
+	height: 50px;
+	width:100px;
+	margin: 0 10px 0 10px; 
+	
+	
+}
+
+
+header{
+	
+	display: flex;
+    align-items: center;
+    height: 200px;
+    justify-content: center;
+    margin-bottom: 20px;
+	
+}
+
+
+.message-container{
+	
+	width:100%;
+	height : 100px;
+	background-color: rgb(30,133,53);
+	color: white;
+	margin: 15px 0px 15px 0px;
+	padding:10px;
+	border-radius:20px;
+	
+	
+}
+
+.table-container{
+	
+	width: 100%;
+	margin-top: 20px;
+	
+}
+
+
+.table-head, table-body{
+	
+	width: 100%;
+	height: 50px;
+	
+}
+
+tr{
+	
+	display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(22, 61, 233);
+    margin-top: 10px;
+	font-size: 17px;
+}
+
+th, td{
+	
+	width: 100%;
+    height: 30px;
+    text-align: center;
+    margin: 20px;
+	padding: 10px;
+}
+
+a{
+	
+	text-decoration: none;
+	margin:10px;
+	padding: 10px;
+	background-color: rgb(22, 61, 233);
+	border-radius: 15px;
+	color: white;
+	
+	
+}
+
+
